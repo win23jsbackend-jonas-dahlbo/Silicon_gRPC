@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option csharp_namespace = "ConsoleApp1";
+
+package subscribe;
+
+service SubscriptionService {
+	rpc Subscribe (SubscribeRequest) returns (SubscribeResponse);
+	rpc Unsubscribe (UnSubscribeRequest) returns (UnSubscribeResponse);
+}
+
+message SubscribeRequest {
+	string email = 1;
+}
+
+message SubscribeResponse {
+	string message = 1;
+}
+
+message UnSubscribeRequest {
+	string email = 1;
+}
+
+message UnSubscribeResponse {
+	string message = 1;
+}
